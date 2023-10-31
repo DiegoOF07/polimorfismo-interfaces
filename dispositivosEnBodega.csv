@@ -1,0 +1,6 @@
+id,ram,almacenamiento,description,precio,visaCuotas,marca,modelo,encendido,volumen,brillo,videos,procesador,microusbExterna,cargadorIncluido,is5G,velocidadCPU,velocidadGPU,tipoAlmacenamiento,tipoDispositivo
+1,10GB,500GB,Laptop multimedia,5000,12,Dell,A0013B,true,0,0,5,,,,,2,500,HDD,2
+2,3GB,256GB,Celular de ultima generacion,7000,18,Samsung,Note20,true,0,0,3,Snapdragon,true,true,false,,,,1
+3,16GB,1TB,Laptop para gaming,13200,18,Asus,DQ454F,true,0,0,5,,,,,4.5,2660,SSD,2
+4,5GB,128GB,Celular ultra resistente,4000,12,Motorola,G90,true,0,0,3,Helio,false,true,true,,,,1
+5,8GB,500GB,Laptop para oficina,6500,12,HP,D45w32,true,0,0,5,,,,,3,2660,HDD,2

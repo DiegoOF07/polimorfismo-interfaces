@@ -1,4 +1,4 @@
-public class Dispositivo {
+public class Dispositivo implements Comparable<Dispositivo>{
 
     protected int id;
     protected String ram;
@@ -42,6 +42,17 @@ public class Dispositivo {
         this.volumen = volumen;
         this.brillo = brillo;
         this.videos = videos;
+    }
+
+    @Override
+    public int compareTo(Dispositivo o) {
+        if(this.getPrecio()>o.getPrecio()){
+            return 1;
+        }else if(this.getPrecio()<o.getPrecio()){
+            return -1;
+        }else{
+            return 0;
+        }
     }
 
     public int getId() {
