@@ -3,6 +3,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
+/**
+ * @author Diego Oswaldo Flores Rivas 23714
+ * @version 3.0
+ * @description Programa que se encargara de llevar el control de los dispositivos de una tienda llamada ElectroTech
+ */
 public class Data {
     private File file;
 
@@ -26,7 +31,7 @@ public class Data {
         while(linea != null){
             List<String> items = Stream.of(linea.split("\\s*,\\s*")).toList();
             linea = bufer.readLine();
-            if(items.get(items.size()-1).equals("1")){
+            if(items.get(19).equals("1")){
                 guardados.add(
                     new Telefono(
                         Integer.parseInt(items.get(0)), 
@@ -46,7 +51,7 @@ public class Data {
                         Boolean.parseBoolean(items.get(15))
                         )
                     );
-            }else{
+            }else if(items.get(19).equals("2")){
                 guardados.add(
                     new Laptop(
                         Integer.parseInt(items.get(0)), 
@@ -67,7 +72,9 @@ public class Data {
                 );
             }
         }
-        bufer.close();
+        if(linea != null){
+            bufer.close();
+        }
         return guardados;
     }
 }

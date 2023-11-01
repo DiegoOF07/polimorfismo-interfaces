@@ -1,5 +1,11 @@
 import java.util.ArrayList;
 
+/**
+ * @author Diego Oswaldo Flores Rivas 23714
+ * @version 3.0
+ * @description Programa que se encargara de llevar el control de los dispositivos de una tienda llamada ElectroTech
+ */
+
 public class ElectroTech{
     private ArrayList<Dispositivo> dispositivos;
     private Data data;
@@ -16,8 +22,10 @@ public class ElectroTech{
      * @changes El metodo retornara una lista de dispositivos
      */
     public ArrayList<Dispositivo> mostrarDispositivos() throws Exception{
-        for (Dispositivo dispositivo : data.readData()) {
-            dispositivos.add(dispositivo);
+        if(dispositivos.size()==0){
+            for (Dispositivo dispositivo : data.readData()) {
+                dispositivos.add(dispositivo);
+            }
         }
         return dispositivos;
     }
@@ -27,7 +35,13 @@ public class ElectroTech{
      * @param id
      * @return Dispositivo
      */
-    public Dispositivo buscarDispositivo(int id){
+    public Dispositivo buscarDispositivo(int id) throws Exception{
+        if(dispositivos.size()==0){
+            for (Dispositivo dispositivo : data.readData()) {
+            dispositivos.add(dispositivo);
+            }
+        }
+
         Dispositivo nDispositivo = null;
         for (Dispositivo dispositivo : dispositivos) {
             if(dispositivo.getId() == id){
@@ -37,20 +51,40 @@ public class ElectroTech{
         return nDispositivo;
     }
 
-    public Dispositivo masCaro(){
+    /**
+     * @description Metodo que retornara el dispositivo mas caro
+     * @return Dispositivo
+     * @throws Exception
+     */
+    public Dispositivo masCaro() throws Exception{
+        if(dispositivos.size()==0){
+            for (Dispositivo dispositivo : data.readData()) {
+            dispositivos.add(dispositivo);
+            }
+        }
         Dispositivo masCaro = dispositivos.get(0);
         for (Dispositivo dispositivo : dispositivos) {
-            if(masCaro.compareTo(dispositivo)>0){
+            if(masCaro.compareTo(dispositivo)<0){
                 masCaro = dispositivo;
             }
         }
         return masCaro;
     }
 
-    public Dispositivo masBarato(){
+    /**
+     * @description Metodo que retorna al dispositivo mas barato
+     * @return Dispositivo
+     * @throws Exception
+     */
+    public Dispositivo masBarato() throws Exception{
+        if(dispositivos.size()==0){
+            for (Dispositivo dispositivo : data.readData()) {
+            dispositivos.add(dispositivo);
+            }
+        }
         Dispositivo masBarato = dispositivos.get(0);
         for (Dispositivo dispositivo : dispositivos) {
-            if(masBarato.compareTo(dispositivo)<0){
+            if(masBarato.compareTo(dispositivo)>0){
                 masBarato = dispositivo;
             }
         }

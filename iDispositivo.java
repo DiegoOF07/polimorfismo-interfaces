@@ -1,5 +1,7 @@
 /**
- * iDispositivo
+ * @author Diego Oswaldo Flores Rivas 23714
+ * @version 3.0
+ * @description Programa que se encargara de llevar el control de los dispositivos de una tienda llamada ElectroTech
  */
 public interface iDispositivo {
 
